@@ -26,7 +26,7 @@ class CartModel(AbstractBaseModel):
 
 
 class CartitemModel(AbstractBaseModel):
-    cart = models.ForeignKey(CartModel, on_delete=models.CASCADE, related_name="cart")
+    cart = models.ForeignKey(CartModel, on_delete=models.CASCADE, related_name="cart_item")
     product = models.ForeignKey("api.ProductModel", on_delete=models.CASCADE, related_name="product")
     quantity = models.PositiveBigIntegerField(verbose_name=_("Quantity"))
     total_price = models.DecimalField(max_digits=200, decimal_places=2)
