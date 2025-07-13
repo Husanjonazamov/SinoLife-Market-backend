@@ -3,10 +3,21 @@ from django.db import models
 
 from ..choices import RoleChoice
 from ..managers import UserManager
+from django.utils.translation import gettext_lazy as _
+
+
+class LangChoices(models.TextChoices):
+    UZBEK = 'uz', 'Uzbek'
+    ENGLISH = 'en', 'English'
+    RUSSIAN = 'ru', 'Russian'
+    
 
 
 class User(auth_models.AbstractUser):
-    phone = models.CharField(max_length=255, unique=True)
+    phone = models.CharField(max_length=255, unique=True, blank=True, null=True)
+    tg_id = models.BigIntegerField(blank=True, null=True)
+    lang = models.CharField(verbose_name=_("Lang"), choices=LangChoices.choices, default=LangChoices.UZBEK)
+    
     username = models.CharField(max_length=255, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
