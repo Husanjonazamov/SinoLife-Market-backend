@@ -4,11 +4,10 @@ from django_core.models import AbstractBaseModel
 
 
 class CategoryModel(AbstractBaseModel):
-
-    name = models.CharField(verbose_name=_("name"), max_length=255)
+    title = models.CharField(verbose_name=_("title"), max_length=255)
 
     def __str__(self):
-        return str(self.pk)
+        return str(self.title)
 
     @classmethod
     def _create_fake(self):
