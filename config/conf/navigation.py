@@ -46,12 +46,12 @@ PAGES = [
             {
                 "title": _("Buyurtma Egalari"),
                 "icon": "shopping_cart",
-                "link": reverse_lazy("admin:api_productmodel_changelist"),
+                "link": reverse_lazy("admin:api_ordermodel_changelist"),
             },
             {
                 "title": _("Buyurtmadagi Mahsulotlar"),
                 "icon": "receipt_long",
-                "link": reverse_lazy("admin:api_categorymodel_changelist"),
+                "link": reverse_lazy("admin:api_orderitemmodel_changelist"),
             },
         ],
     },

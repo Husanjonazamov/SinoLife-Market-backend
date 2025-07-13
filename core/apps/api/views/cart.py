@@ -87,7 +87,9 @@ class CartView(BaseViewSetMixin, ModelViewSet):
             return Response({"detail": "Savat topilmadi"}, status=404)
         except CartitemModel.DoesNotExist:
             return Response({"detail": f"Product savatda topilmadi"}, status=404)
-        
+
+
+
 
 
 @extend_schema(tags=["cartItem"])

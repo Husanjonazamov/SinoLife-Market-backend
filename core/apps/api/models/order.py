@@ -30,7 +30,7 @@ class OrderModel(AbstractBaseModel):
 
 
 class OrderitemModel(AbstractBaseModel):
-    order = models.ForeignKey(OrderModel, on_delete=models.CASCADE, related_name="order")
+    order = models.ForeignKey(OrderModel, on_delete=models.CASCADE, related_name="order_items")
     product = models.ForeignKey("api.ProductModel", on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
     price = models.DecimalField(max_digits=10, decimal_places=2)
