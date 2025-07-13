@@ -1,0 +1,28 @@
+{
+ "template": "https://github.com/JscorpTech/django",
+ "commit": "21828db40fdb614c96281df6ebd424a9c38edfab",
+ "checkout": null,
+ "context": {
+  "cookiecutter": {
+   "cacheops": true,
+   "silk": true,
+   "storage": true,
+   "rosetta": true,
+   "channels": false,
+   "ckeditor": false,
+   "modeltranslation": true,
+   "parler": false,
+   "project_name": "sinolife-backend",
+   "settings_module": "config.settings.local",
+   "runner": "wsgi",
+   "script": "entrypoint.sh",
+   "key": "key",
+   "port": "8013",
+   "phone": "998888112309",
+   "password": "2309",
+   "max_line_length": "120",
+   "project_slug": "sinolife_backend"
+  }
+ },
+ "directory": null
+}
