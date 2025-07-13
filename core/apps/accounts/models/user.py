@@ -4,13 +4,8 @@ from django.db import models
 from ..choices import RoleChoice
 from ..managers import UserManager
 from django.utils.translation import gettext_lazy as _
+from core.apps.api.enums.choices import LangChoices
 
-
-class LangChoices(models.TextChoices):
-    UZBEK = 'uz', 'Uzbek'
-    ENGLISH = 'en', 'English'
-    RUSSIAN = 'ru', 'Russian'
-    
 
 
 class User(auth_models.AbstractUser):
