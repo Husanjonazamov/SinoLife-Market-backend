@@ -3,6 +3,7 @@ from core.apps.accounts.models.user import User
 from core.apps.api.serializers.order.orderItem import BaseOrderitemSerializer
 
 from core.apps.api.models import OrderModel, CartModel, OrderitemModel
+from core.apps.payment.enums.send_generate import send_generate_payment
 
 
 class BaseOrderSerializer(serializers.ModelSerializer):
@@ -58,7 +59,9 @@ class CreateOrderSerializer(serializers.ModelSerializer):
             total=cart.total_price,
             payment_type=payment_type
         )
-
+        send_generate_payment(order)
+        
+        
         for item in cart.cart_item.all():
             OrderitemModel.objects.create(
                 order=order,

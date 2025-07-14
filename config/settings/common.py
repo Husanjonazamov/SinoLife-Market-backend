@@ -157,6 +157,24 @@ MODELTRANSLATION_DEFAULT_LANGUAGE = "uz"
 
 
 
+PAYME_ID = env.str("PAYME_ID")
+PAYME_KEY = env.str("PAYME_KEY")
+PAYME_ACCOUNT_FIELD = "order_id"
+PAYME_AMOUNT_FIELD = "total"
+PAYME_ACCOUNT_MODEL = "core.apps.api.models.order.OrderModel"
+PAYME_ONE_TIME_PAYMENT = True
+
+# CLICK
+CLICK_SERVICE_ID = env.int("CLICK_SERVICE_ID")
+CLICK_MERCHANT_ID = env.int("CLICK_MERCHANT_ID")
+CLICK_SECRET_KEY = env.str("CLICK_SECRET_KEY")
+CLICK_USER_ID = env.int("CLICK_USER_ID")
+CLICK_ACCOUNT_MODEL = "core.apps.api.models.order.OrderModel"
+CLICK_AMOUNT_FIELD = "total"
+
+
+
+
 JST_LANGUAGES = [
     {
         "code": "uz",

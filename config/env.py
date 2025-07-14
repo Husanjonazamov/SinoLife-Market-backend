@@ -21,8 +21,19 @@ env = environ.Env(
     VITE_PORT=(int, 5173),
     VITE_HOST=(str, "vite"),
     NGROK_AUTHTOKEN=(str, "TOKEN"),
-    BOT_TOKEN=(str, "TOKEN"),
     OTP_MODULE="core.services.otp",
     OTP_SERVICE="EskizService",
     PROJECT_ENV=(str, "prod"),
+
+    # PAYMENT
+    BOT_TOKEN=(str, "TOKEN"),
+    ADMIN=(int, "TOKEN"),
+
+    PAYME_ID=(str, "TOKEN"),
+    PAYME_KEY=(str, "TOKEN"),
+    
+    CLICK_SERVICE_ID=(int, "TOKEN"),
+    CLICK_MERCHANT_ID=(int, "TOKEN"),
+    CLICK_SECRET_KEY=(str, "TOKEN"),
+    CLICK_USER_ID=(int, "TOKEN"),
 )

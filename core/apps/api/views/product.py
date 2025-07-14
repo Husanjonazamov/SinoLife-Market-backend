@@ -8,6 +8,9 @@ from core.apps.api.serializers.product import CreateProductSerializer, ListProdu
 from rest_framework.exceptions import NotFound
 
 
+
+
+
 @extend_schema(tags=["product"])
 class ProductView(BaseViewSetMixin, ReadOnlyModelViewSet):
     queryset = ProductModel.objects.all()
@@ -23,15 +26,21 @@ class ProductView(BaseViewSetMixin, ReadOnlyModelViewSet):
 
     def get_queryset(self):
         queryset = super().get_queryset()
+        
         category_title = self.request.query_params.get("category")
+        product_title = self.request.query_params.get("title")
         
         if category_title:
             try:
                 category = CategoryModel.objects.get(title=category_title)
             except CategoryModel.DoesNotExist:
-                raise NotFound("bunday category topilmadi")
+                raise NotFound("Bunday category topilmadi")
             
             queryset = queryset.filter(category=category)
+        
+        if product_title:
+            queryset = queryset.filter(title__icontains=product_title)
             
         return queryset
+
         
