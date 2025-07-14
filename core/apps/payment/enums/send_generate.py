@@ -33,17 +33,18 @@ def send_generate_payment(order):
     payment_type = order.payment_type
     order_id = order.id
     total = order.total
+    amount = total * 100
 
     if payment_type == "payme":
         pay_link = payme.initializer.generate_pay_link(
             id=int(order_id),
-            amount=total,
+            amount=amount,
             return_url="https://t.me/sinolifemarket_bot"
         )
     else:
         pay_link = click_up.initializer.generate_pay_link(
             id=user_id,
-            amount=total,
+            amount=amount,
             return_url="https://t.me/sinolifemarket_bot"
         )
         
