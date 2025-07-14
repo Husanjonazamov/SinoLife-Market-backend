@@ -4,6 +4,8 @@ APPS = [
     
     "cacheops",
     "rosetta",
+    "payme",
+    'click_up',
     
     
     "drf_spectacular",
