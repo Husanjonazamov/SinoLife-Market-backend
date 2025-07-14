@@ -33,7 +33,7 @@ def send_generate_payment(order):
     payment_type = order.payment_type
     order_id = order.id
     total = order.total
-    amount = total * 100
+    amount = total
 
     if payment_type == "payme":
         pay_link = payme.initializer.generate_pay_link(
